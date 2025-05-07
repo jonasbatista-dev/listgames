@@ -1,8 +1,8 @@
 'use client';
-import { createGlobalStyle } from 'styled-components';
+
+import { createGlobalStyle, css } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
-
 
 @font-face {
   font-display: swap;
@@ -33,19 +33,16 @@ const GlobalStyles = createGlobalStyle`
   padding: 0px;
   box-sizing: border-box
 }
-html {
-  font-size: 62.5%;
+
+${({ theme }) => css`
+  html {
+    font-size: 62.5%;
   }
-html, body {
-    height: 100vh !important;
-    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
-    'Helvetica Neue', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-
+  body {
+    font-family: ${theme.font.family};
+    font-size: ${theme.font.sizes.medium};
+  }
+`}
 `;
 
 export default GlobalStyles;

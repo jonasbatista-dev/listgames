@@ -1,3 +1,3 @@
 // .jest/setup.js
-require('@testing-library/jest-dom');
-require('jest-styled-components');
+import '@testing-library/jest-dom';
+import 'jest-styled-components';

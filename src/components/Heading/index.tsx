@@ -1,10 +1,21 @@
-import { Wrapper } from './styles'; //
+import { Wrapper } from './styles';
 
-//components
-const Heading = () => {
+export type HeadingProps = {
+  children: React.ReactNode;
+  color?: 'white' | 'black';
+  lineLeft?: boolean;
+  lineBottom?: boolean;
+};
+
+const Heading = ({
+  children,
+  color = 'black',
+  lineLeft = false,
+  lineBottom = false,
+}: HeadingProps) => {
   return (
-    <Wrapper>
-      <h1>Heading</h1>
+    <Wrapper color={color} lineLeft={lineLeft} lineBottom={lineBottom}>
+      {children}
     </Wrapper>
   );
 };

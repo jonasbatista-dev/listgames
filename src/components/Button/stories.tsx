@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { MdAddShoppingCart } from 'react-icons/md';
+import { ShoppingCart } from '@styled-icons/material-outlined';
 import Button, { ButtonProps } from '.';
 
 export default {
@@ -25,6 +25,6 @@ export const withIcon: StoryObj<ButtonProps> = {
   args: {
     size: 'small',
     children: 'Buy now',
-    icon: <MdAddShoppingCart />,
+    icon: <ShoppingCart />,
   },
 };

@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Main/> Should render the heading 1`] = `
+.c0 {
+  background-color: #06092b;
+  color: #fff;
+  width: 100%;
+  height: 100vh;
+  padding: 3rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.c1 {
+  width: 25rem;
+  margin-bottom: 2rem;
+}
+
+.c2 {
+  font-size: 2.5rem;
+}
+
+.c3 {
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.c4 {
+  margin-top: 3rem;
+  width: min(30rem, 100%);
+}
+
+<main
+  class="c0"
+>
+  <h1>
+    Main Component
+  </h1>
+  <img
+    class="c1"
+    src="/logo.svg"
+  />
+  <h1
+    class="c2"
+  >
+    React Avançado
+  </h1>
+  <h2
+    class="c3"
+  >
+    Typescript, ReactJS, NextJS e Styled Components
+  </h2>
+  <img
+    class="c4"
+    src="/hero-illustration.svg"
+  />
+</main>
+`;

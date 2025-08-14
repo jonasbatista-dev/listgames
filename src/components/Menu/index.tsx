@@ -6,13 +6,13 @@ import {
   ShoppingCart,
 } from '@styled-icons/material-outlined';
 
-import Logo from '@/components/Logo';
+import Logo from '../../components/Logo';
 
 const Menu = () => {
   return (
     <Wrapper>
       <IconWrapper>
-        <MenuIcon />
+        <MenuIcon aria-label="Open Menu" />
       </IconWrapper>
 
       <LogoWrapper>
@@ -21,10 +21,10 @@ const Menu = () => {
 
       <MenuGroup>
         <IconWrapper>
-          <SearchIcon />
+          <SearchIcon aria-label="Search" />
         </IconWrapper>
         <IconWrapper>
-          <ShoppingCart />
+          <ShoppingCart aria-label="Shopping Cart" />
         </IconWrapper>
       </MenuGroup>
     </Wrapper>

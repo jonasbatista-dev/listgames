@@ -13,11 +13,22 @@ module.exports = {
   setupFilesAfterEnv: ['<rootDir>/.jest/setup.js'],
   modulePaths: ['<rootDir>/src/'],
   transform: {
-    '^.+\\.(js|jsx|ts|tsx)$': ['babel-jest', { presets: ['next/babel'] }],
+    '^.+\\.(js|jsx|ts|tsx)$': [
+      'ts-jest',
+      {
+        tsconfig: {
+          jsx: 'react-jsx',
+          moduleResolution: 'node',
+        },
+      },
+    ],
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
   moduleNameMapper: {
     '^styled-components':
       'styled-components/dist/styled-components.browser.cjs.js',
+  },
+  testEnvironmentOptions: {
+    customExportConditions: [''],
   },
 };

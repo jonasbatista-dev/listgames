@@ -21,7 +21,9 @@ const createMediaMatchModifiers = () => ({
 
 const mediaMatchModifiers = createMediaMatchModifiers();
 
-const MediaMatch = styled.div<MediaMatchProps>`
+const MediaMatch = styled.div.withConfig({
+  shouldForwardProp: (prop) => !['greaterThan', 'lessThan'].includes(prop),
+})<MediaMatchProps>`
   ${({ lessThan, greaterThan }) => css`
     display: none;
 

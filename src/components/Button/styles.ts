@@ -39,7 +39,9 @@ const wrapperModifiers = {
   `,
 };
 
-const Wrapper = styled.button<WrapperProps>`
+const Wrapper = styled.button.withConfig({
+  shouldForwardProp: (prop) => !['size', 'fullWidth', 'hasIcon'].includes(prop),
+})<WrapperProps>`
   ${({ theme, size, fullWidth, hasIcon }) => css`
     background: linear-gradient(180deg, #ff5f5f 0%, #f062f0 50%);
     color: ${theme.colors.white};
@@ -48,6 +50,9 @@ const Wrapper = styled.button<WrapperProps>`
     padding: ${theme.spacings.xxsmall};
     cursor: pointer;
     transition: opacity 0.2s ease;
+    &:hover {
+      background: linear-gradient(180deg, #e35565 0%, #d958a6 50%);
+    }
     &:active {
       opacity: 0.5;
     }

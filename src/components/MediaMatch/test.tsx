@@ -28,12 +28,11 @@ describe('<MediaMatch/>', () => {
 
   it('should show or hide based on the media passed', () => {
     const mediaMatch = screen.getByTestId('desktop').parentElement;
-    expect(mediaMatch).toHaveAttribute('greaterThan', 'medium');
     expect(mediaMatch).toHaveStyleRule('display', 'none');
   });
+
   it('should show or hide based on the media passed', () => {
     const mediaMatch = screen.getByTestId('mobile').parentElement;
-    expect(mediaMatch).toHaveAttribute('lessThan', 'medium');
     expect(mediaMatch).toHaveStyleRule('display', 'none');
   });
 });

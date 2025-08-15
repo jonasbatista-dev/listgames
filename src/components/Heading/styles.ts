@@ -40,7 +40,10 @@ const wrapperModifiers = {
   `,
 };
 
-const Wrapper = styled.h2<HeadingProps>`
+const Wrapper = styled.h2.withConfig({
+  shouldForwardProp: (prop) =>
+    !['color', 'lineLeft', 'lineBottom', 'size', 'lineColor'].includes(prop),
+})<HeadingProps>`
   ${({
     theme,
     color,

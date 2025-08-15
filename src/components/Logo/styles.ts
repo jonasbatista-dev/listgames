@@ -31,7 +31,10 @@ const wrapperModifiers = {
   `,
 };
 
-export const Wrapper = styled.div<LogoProps>`
+export const Wrapper = styled.div.withConfig({
+  shouldForwardProp: (prop) =>
+    !['color', 'size', 'hideOnMobile'].includes(prop),
+})<LogoProps>`
   ${({ theme, color, size, hideOnMobile }) => css`
     color: ${theme.colors[color!]};
 

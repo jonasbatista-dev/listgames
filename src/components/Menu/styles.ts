@@ -44,7 +44,9 @@ const IconWrapper = styled.div`
   `}
 `;
 
-const MenuFull = styled.nav<MenuFullProps>`
+const MenuFull = styled.nav.withConfig({
+  shouldForwardProp: (prop) => !['isOpen'].includes(prop),
+})<MenuFullProps>`
   ${({ isOpen, theme }) => css`
     display: flex;
     flex-direction: column;

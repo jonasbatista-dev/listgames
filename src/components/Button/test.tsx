@@ -1,7 +1,8 @@
 import { screen } from '@testing-library/react';
-import { MdAddShoppingCart } from 'react-icons/md';
+
 import Button from '.';
 import { renderWithTheme } from '../../utils/test/helpers';
+import { ShoppingCart } from '@styled-icons/material-outlined';
 
 describe('<Button/>', () => {
   it('Should render the medium size by default', () => {
@@ -64,7 +65,7 @@ describe('<Button/>', () => {
 
   it('Should render an icon version', () => {
     renderWithTheme(
-      <Button icon={<MdAddShoppingCart data-testid="icon" />}>Buy Now</Button>,
+      <Button icon={<ShoppingCart data-testid="icon" />}>Buy Now</Button>,
     );
 
     expect(screen.getByText(/Buy now/i)).toBeInTheDocument();

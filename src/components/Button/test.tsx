@@ -71,4 +71,17 @@ describe('<Button/>', () => {
     expect(screen.getByText(/Buy now/i)).toBeInTheDocument();
     expect(screen.getByTestId('icon')).toBeInTheDocument();
   });
+
+  it('Should render Button as a lik', () => {
+    renderWithTheme(
+      <Button as="a" href="/link" icon={<ShoppingCart data-testid="icon" />}>
+        Buy Now
+      </Button>,
+    );
+
+    expect(screen.getByRole('link', { name: /buy now/i })).toHaveAttribute(
+      'href',
+      '/link',
+    );
+  });
 });

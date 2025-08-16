@@ -1,17 +1,26 @@
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
+import { renderWithTheme } from '../../utils/test/helpers';
 
 import Footer from '.';
 
-describe('<Footer/>', () => {
-  it('Should render the heading', () => {
-    const { container } = render(<Footer />);
+describe('<Footer />', () => {
+  it('should render 4 column topics', () => {
+    const { container } = renderWithTheme(<Footer />);
 
     expect(
-      screen.getByRole('heading', {
-        name: /Footer/i,
-      }),
-    );
+      screen.getByRole('heading', { name: /contact us/i }),
+    ).toBeInTheDocument();
 
-    expect(container?.firstChild).toMatchSnapshot();
+    expect(
+      screen.getByRole('heading', { name: /follow us/i }),
+    ).toBeInTheDocument();
+
+    expect(screen.getByRole('heading', { name: /links/i })).toBeInTheDocument();
+
+    expect(
+      screen.getByRole('heading', { name: /location/i }),
+    ).toBeInTheDocument();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

@@ -1,12 +1,16 @@
-import { Wrapper } from './styles'; //
+import { AnchorHTMLAttributes, ButtonHTMLAttributes } from 'react';
+import { Wrapper } from './styles';
+
+type ButtonTypes =
+  | AnchorHTMLAttributes<HTMLAnchorElement>
+  | ButtonHTMLAttributes<HTMLAnchorElement>;
 
 export type ButtonProps = {
-  children?: React.ReactNode;
   size?: 'large' | 'medium' | 'small';
   fullWidth?: boolean;
   icon?: React.ReactElement;
-  onClick?: () => (e: React.MouseEvent<HTMLButtonElement>) => void;
-};
+  as?: React.ElementType;
+} & ButtonTypes;
 
 const Button = ({
   children,

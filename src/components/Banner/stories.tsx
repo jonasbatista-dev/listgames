@@ -10,7 +10,27 @@ export default {
     subtitle: '<p>Play the new <strong>CrashLands</strong> season</p>',
     buttonLabel: 'Buy now',
     buttonLink: '/games/defy-death',
+    ribbon: 'Best Seller',
+    ribbonSize: 'small',
+    ribbonColor: 'primary',
   },
+  argTypes: { ribbon: { type: 'string' } },
+  decorators: [
+    (Story, i) => (
+      <div
+        key={i.id}
+        style={{
+          maxWidth: '100rem',
+
+          margin: '0 auto',
+
+          position: 'relative',
+        }}
+      >
+        <Story />
+      </div>
+    ),
+  ],
   parameters: {
     layout: 'fullscreen',
   },

@@ -30,4 +30,18 @@ describe('<Banner/>', () => {
       screen.getByRole('img', { name: /Defy death/i }),
     ).toBeInTheDocument();
   });
+
+  it('Should render a Ribbon', () => {
+    renderWithTheme(
+      <Banner
+        {...props}
+        ribbon="Best Seller"
+        ribbonSize="small"
+        ribbonColor="secondary"
+      />,
+    );
+    const ribbon = screen.getByText(/Best Seller/i);
+    expect(ribbon).toHaveStyle({ 'background-color': '#3CD3C1' });
+    expect(ribbon).toHaveStyle({ height: '2.6rem', 'font-size': '1.2rem' });
+  });
 });

@@ -9,3 +9,13 @@ exports[`<Highlight/> Should render the heading 1`] = `
   </h1>
 </main>
 `;
+
+exports[`<Highlight/> Should render the headings and button 1`] = `
+<main
+  class=""
+>
+  <h1>
+    Highlight
+  </h1>
+</main>
+`;

@@ -1,6 +1,9 @@
 import styled, { css, DefaultTheme } from 'styled-components';
 
-const Wrapper = styled.article``;
+const Wrapper = styled.article`
+  background-color: ${({ theme }) => theme.colors.white};
+  position: relative;
+`;
 
 const ImageBox = styled.div`
   position: relative;
@@ -40,7 +43,8 @@ const Content = styled.div`
     justify-content: space-between;
     position: relative;
     height: 100%;
-    margin-top: ${theme.spacings.xsmall};
+    margin: ${theme.spacings.xsmall};
+    padding-bottom: ${theme.spacings.xsmall};
   `};
 `;
 

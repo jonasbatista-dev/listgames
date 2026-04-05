@@ -9,6 +9,15 @@ export default {
     developer: 'Rockstar Games',
     img: '/img/red-dead-img.jpg',
     price: '$235.00',
+    promotionalPrice: '$200.00',
+  },
+  argTypes: {
+    onFav: { action: 'clicked' },
+  },
+  parameters: {
+    backgrounds: {
+      default: 'dark',
+    },
   },
 } as Meta;
 

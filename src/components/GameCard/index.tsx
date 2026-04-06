@@ -15,6 +15,7 @@ import {
   Content,
 } from './styles';
 import Button from '../Button';
+import Ribbon, { RibbonColors, RibbonSizes } from '../Ribbon';
 
 export type GameCardProps = {
   title: string;
@@ -24,6 +25,9 @@ export type GameCardProps = {
   promotionalPrice?: string;
   favorite?: boolean;
   onFav?: () => void;
+  ribbon?: string;
+  ribbonSize?: RibbonSizes;
+  ribbonColor?: RibbonColors;
 };
 
 const GameCard = ({
@@ -34,6 +38,9 @@ const GameCard = ({
   promotionalPrice,
   onFav,
   favorite = false,
+  ribbon,
+  ribbonSize = 'small',
+  ribbonColor = 'primary',
 }: GameCardProps) => {
   return (
     <Wrapper>
@@ -58,6 +65,13 @@ const GameCard = ({
           <Button icon={<AddShoppingCart />} size="small" />
         </BuyBox>
       </Content>
+      {ribbon ? (
+        <Ribbon color={ribbonColor} size={ribbonSize}>
+          {ribbon}
+        </Ribbon>
+      ) : (
+        <></>
+      )}
     </Wrapper>
   );
 };

@@ -70,4 +70,11 @@ describe('<GameCard />', () => {
 
     expect(onFav).toHaveBeenCalled();
   });
+
+  it('should render with ribbon', () => {
+    const ribbon: string = '20% OFF';
+    renderWithTheme(<GameCard {...defaultProps} ribbon={ribbon} />);
+
+    expect(screen.getByText(ribbon)).toBeInTheDocument();
+  });
 });
